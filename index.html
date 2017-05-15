@@ -7,46 +7,46 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://fonts.googleapis.com/css?family=Lato:400,900i&amp;subset=latin-ext" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
-  
 </head>
 <body>
+
 <section id="averagePrice">
   <header> Średnie ceny nieruchomości </header>
   <div id="search">
     <div class="field">
       <label for="wojewodztwo">Województwo</label>
       <select id="wojewodztwo">
-        <option value="volvo">Mazowieckie</option>
-        <option value="saab">Małopolskie</option>
-        <option value="opel">Pomorskie</option>
-        <option value="audi">Podlaskie</option>
+        <option value="Mazowieckie">Mazowieckie</option>
+        <option value="Małopolskie">Małopolskie</option>
+        <option value="Pomorskie">Pomorskie</option>
+        <option value="Podlaskie">Podlaskie</option>
       </select>
     </div>
     <div class="field">
       <label for="powiat">Powiat</label>
       <select id="powiat">
-        <option value="volvo">Warszawski</option>
-        <option value="saab">Grójecki</option>
-        <option value="opel">Pruszkowski</option>
-        <option value="audi">Miński</option>
+        <option value="Warszawski">Warszawski</option>
+        <option value="Grójecki">Grójecki</option>
+        <option value="Pruszkowski">Pruszkowski</option>
+        <option value="Miński">Miński</option>
       </select>
     </div>
     <div class="field">
       <label for="miejscowosc">Miejscowość</label>
       <select id="miejscowosc">
-        <option value="warszawa">Warszawa</option>
-        <option value="gdańsk">Gdańsk</option>
-        <option value="kraków">Kraków</option>
-        <option value="toruń">Toruń</option>
+        <option value="Warszawa">Warszawa</option>
+        <option value="Gdańsk">Gdańsk</option>
+        <option value="Kraków">Kraków</option>
+        <option value="Toruń">Toruń</option>
       </select>
     </div>
     <div class="field">
       <label for="dzielnica">Dzielnica</label>
       <select id="dzielnica">
-        <option value="bemowo">Bemowo</option>
-        <option value="mokotów">Mokotów</option>
-        <option value="wola">Wola</option>
-        <option value="ursynów">Ursynów</option>
+        <option value="Bemowo">Bemowo</option>
+        <option value="Mokotów">Mokotów</option>
+        <option value="Wola">Wola</option>
+        <option value="Ursynów">Ursynów</option>
       </select>
     </div>
     <div class="field">
@@ -67,19 +67,19 @@
       </select>
     </div>
     <div class="field">
-      <label for="rynek">rynek</label>
+      <label for="rynek">Rynek</label>
       <select id="rynek">
-        <option value="Pierwotny">Pierwotny</option>
-        <option value="Wtórny">Wtórny</option>
+        <option value="pierwotnego">Pierwotny</option>
+        <option value="wtórnego">Wtórny</option>
       </select>
     </div>
     <div class="field">
       <label for="powierzchnia">Powierzchnia</label>
       <select id="powierzchnia">
-        <option value="50">Do 50</option>
+        <option value="do 50">Do 50</option>
         <option value="50-100">50-100</option>
         <option value="100-200">100-200</option>
-        <option value="200">200+</option>
+        <option value="powyżej 200">200+</option>
       </select>
     </div>
     <div class="field">
@@ -92,7 +92,7 @@
       </select>
     </div>
     <div class="field">
-      <button>Pokaż</button>
+      <button id="pokaz">Pokaż</button>
     </div>
   </div>
 </section>
@@ -117,7 +117,7 @@
     </div>
 
     <div class="excel">
-     <img src="/images/xls-icon-128x128.png" alt="">
+     <img src="images/xls-icon-128x128.png" alt="">
       <a href="#">Eksportuj</a>
     </div>
   </div>
@@ -128,9 +128,19 @@
     <img src="http://www.naukowiec.org/images/upload/liniowy2.jpg" alt="">
   </div>
   <div class="caption">
-    <div id="caption1">Wykres przedstawia średnie ceny mieszkań, z rynku pierwotnego, o powierzchni 41-60m2. W lokalizacji: województwo:mazowieckie, powiat: Warszawa, miasto Warszawa, dzielnica: Bemowo.</div>
-    <div id="caption2">Lista ogłoszeń z których wyliczono średnią cene: 21 543.</div>
+    <div id="caption1">
+      Wykres przedstawia średnie ceny mieszkań, z rynku <span id="rynek2">pierwotnego</span>, o powierzchni <span id="powierzchnia2">41-60m2</span>m2. W lokalizacji: województwo: <span id="wojewodztwo2">Mazowieckie</span>, powiat: <span id="powiat2">Warszawski</span>, miasto <span id="miejscowosc2">Warszawa</span>, dzielnica: <span id="dzielnica2">Bemowo</span>.
+    </div>
+    <div id="caption2">
+      Lista ogłoszeń z których wyliczono średnią cene: 21 543.
+    </div>
   </div>
 </section>
+
+
+<p id="demo">test</p>
+
+<script   src="https://code.jquery.com/jquery-2.2.4.min.js"   integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="   crossorigin="anonymous"></script>
+<script src="js/main.js"></script>
 </body>
 </html>
