@@ -1,9 +1,8 @@
 $(document).ready(function(){
-  var pokaz = document.getElementById('pokaz');
- 
+    var pokaz = document.getElementById('pokaz');
   
-  
-  pokaz.addEventListener('click',function(){
+    pokaz.addEventListener('click',function(){
+    
     var wojewodztwo = document.getElementById('wojewodztwo').value;
     var wojewodztwo2 = document.getElementById('wojewodztwo2');
     wojewodztwo2.textContent = wojewodztwo;
@@ -31,26 +30,3 @@ $(document).ready(function(){
   });
   
 });
-
-
-
-
-var myJSON = '{ "name":"John", "age":30, "city":"New York"}';
-//var myObj = JSON.parse(myJSON);
-//document.getElementById("demo").innerHTML = myObj.age+ " "+myObj.city +" Moje hobby to "+ myObj.hobby;
-var object = JSON.parse(myJSON);
-console.log(object.name);
-
-
-
-
-var xml = new XMLHttpRequest();
-xml.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-        myObj = JSON.parse(this.responseText);
-        document.getElementById("demo").innerHTML = myObj.name;
-    }
-};
-xmlhttp.open("GET", "json.txt", true);
-xmlhttp.send();
-

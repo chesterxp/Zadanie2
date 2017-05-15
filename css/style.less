@@ -1,66 +1,76 @@
-body{
+body {
   font-family: 'Lato', sans-serif;
   font-size: 20px;
 }
 
 #averagePrice {
-  width: 80%;
+  width: 70%;
   margin: 0 auto;
-  header{
+  position: relative;
+  header {
     font-size: 1.5em;
     margin-bottom: 10px;
+    color: #645f5f;
   }
   #search {
     background: #d6cdc1;
+    padding-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .boxSearch {
     padding: 10px;
     border-radius: 5px;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     flex-wrap: wrap;
-    
-    .field {
+    .field,
+    .field2 {
+      padding: 10px 0;
+      margin: 0 10px;
       label,
-      select,
-      {
+      select {
         font-size: 0.8em;
-        padding: 5px 0;
         width: 250px;
         display: block;
+        margin: 5px 0;
+      }
+      select {
+        border-radius: 5px;
+        padding: 10px 5px;
       }
     }
-    button {
-      display: block;
-      width: 250px;
-      padding: 5px 0;
-      margin: 30px 0;
-      height: 30px;
-      font-size: 0.8em;
-      color: white;
-      background: #ff6c00;
-      border: none;
-      border-radius: 5px;
-      text-shadow: 0px -2px 2px #dddddd;
-      position: relative;
-      
-      &:hover{
-        background: #dd630b;
-      }
-      &:focus{
-        
-        top: 20px;
-      }
-      
+  }
+  button {
+    display: block;
+    width: 250px;
+    padding: 10px 0;
+    margin: 30px 0;
+    height: 46px;
+    font-size: 0.8em;
+    color: white;
+    background: #ff6c00;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0px -2px 2px #b7b7b7;
+    position: absolute;
+    right: 21px;
+    top: 250px;
+    &:hover {
+      background: #dd630b;
     }
   }
 }
 
 #chart {
-  width: 80%;
+  width: 70%;
   margin: 0 auto;
   .topPart {
     display: flex;
     justify-content: space-between;
     padding: 45px 5px 10px 5px;
+    font-size: 0.7em;
     ul {
       list-style-type: none;
       margin: 0;
@@ -73,18 +83,17 @@ body{
     a {
       text-decoration: none;
       color: #1111bc;
-      position: relative; 
+      position: relative;
     }
     .active {
       color: #727272;
       font-weight: bold;
-      
-      &::after{
-        content:"˄";
+      &::after {
+        content: "˄";
         color: #a0a0a0;
         position: absolute;
         transform: scale(1.3);
-        top: 24px;
+        top: 26px;
         left: 50%;
         background: white;
         border: none;
@@ -124,18 +133,139 @@ body{
       }
     }
   }
-  
-  .chartPart{
-    img{
+  .chartPart {
+    img {
       width: 100%;
       height: 400px;
     }
   }
-  
   .caption {
-	  #caption1, #caption2 {
-	    margin-top: 20px;
+    #caption1,
+    #caption2 {
+      margin-top: 40px;
       color: #8e8d8d;
+      font-size: 0.9em;
+    }
+  }
 }
+
+@media all and (max-width:600px) {
+  body {
+    font-size: 16px;
+  }
+  header {
+    text-align: center;
+  }
+  #averagePrice {
+    width: 80%;
+    .boxSearch {
+      justify-content: center;
+      .field {
+        label,
+        select {
+          width: 250px;
+        }
+      }
+    }
+    button {
+      position: static;
+      margin: 0 auto;
+      width: 250px;
+    }
+  }
+  #chart{
+    .topPart{
+      .searchByPrice{
+      width:100%;
+    }
+      .timeRange{
+        width: 100%;
+      }
+      .excel{
+        display: none;
+      }
+      .active::after{
+        top: 22px;
+      }
+    }
+//    .hr{
+//      display: none;
+//    }
+  }
 }
+
+@media all and (min-width:601px) and (max-width:880px) {
+  body {
+    font-size: 17px;
+  }
+  #averagePrice {
+    .boxSearch {
+      justify-content: center;
+      .field {
+        label,
+        select {
+          width: 175px;
+        }
+      }
+    }
+    button {
+      position: static;
+      margin: 0 auto;
+      width: 175px;
+    }
+  }
+  #chart {
+    .topPart {
+      text-align: center;
+      .searchByPrice {
+        width: 50%;
+      }
+      .timeRange {
+        width: 50%;
+      }
+      .excel {
+        display: none;
+      }
+      .active::after{
+        top: 24px;
+      }
+    }
+  }
+}
+@media all and (min-width:881px) and (max-width:1219px) {
+  body {
+    font-size: 18px;
+  }
+  header {
+    text-align: center;
+  }
+  #averagePrice {
+    .boxSearch {
+      justify-content: center;
+    }
+    button {
+      position: static;
+      margin: 0 auto;
+    }
+  }
+  #chart {
+    .topPart {
+      .active::after {
+        top: 29px;
+      }
+    }
+  }
+}
+
+@media all and (min-width:1220px) and (max-width:1587px) {
+  #search {
+    .boxSearch {
+      justify-content: space-around;
+    }
+    button {
+      position: static;
+      margin: 0 auto;
+    }
+  }
+
 }
