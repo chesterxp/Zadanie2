@@ -11,27 +11,29 @@
 <body>
 
 <nav>
+  <section id="main">
   <header>
     <div class="logo">
-      <img src="images/domiporta_655.png" alt="">
+      <img src="images/Domiporta-logo.png" alt="">
     </div>
     
-    <div class="menu">
-      <button id="menuButton">Menu</button>
-    </div>
+    <button id="menuButton">Menu</button>
+
   </header>
-  
-  <div id="menuList">
-    <li><a href="#">ogłoszenia</a></li>
-    <li><a href="#">projekty</a></li>
-    <li><a href="#">porady</a></li>
-    <li><a href="#">moja domiporta <span id="dropDownButton">▼</span></a></li>
+  <div id="menu">
+    <div id="menuList">
+      <a href="#">ogłoszenia</a>
+      <a href="#">projekty</a>
+      <a href="#">porady</a>
+      <a href="#">moja domiporta <span id="dropDownButton">▼</span></a>
+    </div>
   </div>
   
   <div id="addAnons">
     <div class="symbol">★</div>
     <button id="addButton">Dodaj ogłoszenie</button>
   </div>
+  </section>
 </nav>
 
 <section id="averagePrices">
@@ -126,40 +128,44 @@
   </div>
 </section>
 
-<section id="submitResults">
-  <div id="dataSection">
-    <div class="sortByPrice">
-      
-        <a href="#" class="active">Cena całkowita</a>
-        <hr>
-        <a href="#">Cena za m²</a>
+<section id="dataSection">
+    <div id="sortByPrice">
+        <div class="sortBox">
+          <a href="#" class="active">Cena całkowita</a>
+            <hr>
+          <a href="#">Cena za m²</a>
+        </div>
+        <hr class="line">
     </div>
-    <hr>
-    <div class="sortByTime">
-      <ul>
-        <li><a href="#">Zakres</a></li>
-        <li><a href="#">6 m</a></li>
-        <li><a href="#">12 m</a></li>
-        <li><a href="#">24 m</a></li>
-        <li><a href="#">36 m</a></li>
-      </ul>
+    <div id="sortByTime">
+        <div class="timeBox">
+          <p>Zakres:</p>
+          <a href="#">6 m</a><hr>
+          <a href="#">12 m</a><hr>
+          <a href="#">24 m</a><hr>
+          <a href="#" class="active">36 m</a>          
+        </div>
+        <hr class="line">
     </div>
-    <div class="download">
-      <img src="images/xls-icon-128x128.png" alt="">
-      <p>Eksportuj</p>
+    <div id="download">
+      <div class="downBox">
+        <a href="#">
+          <img src="images/xls-icon-128x128.png" alt=""> Eksportuj
+        </a>
+      </div>
+      <hr class="line">
     </div>
-  </div>
-  <div id="chart">
-    <img src="https://www.zoho.com/reports/images/chart-type03.png" alt="">
-  </div>
-  <div id="caption">
-    <div id="caption1">
-      Wykres przedstawia średnie ceny mieszkań na sprzedaż z rynku <span id="rynek2">pierwotnego</span>, o powierzchni <span id="powierzchnia2">50</span>m². W lokalizacji: województwo: <span id="wojewodztwo2">Mazowieckie</span>, powiat: <span id="powiat2">Warszawski</span>, miasto <span id="miejscowosc2">Warszawa</span>, dzielnica: <span id="dzielnica2">Bemowo</span>.
+    <div id="chart">
+      <img src="https://www.zoho.com/reports/images/chart-type03.png" alt="">
     </div>
-    <div id="caption2">
-      Lista ogłoszeń z których wyliczono średnią cene: 21 543.
-    </div>
-  </div>
+    <div id="caption">
+      <div id="caption1">
+         <p>Wykres przedstawia średnie ceny mieszkań na sprzedaż z rynku <span id="rynek2">pierwotnego</span>, o powierzchni <span id="powierzchnia2">50</span>m². W lokalizacji: województwo: <span id="wojewodztwo2">Mazowieckie</span>, powiat: <span id="powiat2">Warszawski</span>, miasto <span id="miejscowosc2">Warszawa</span>, dzielnica: <span id="dzielnica2">Bemowo</span>.</p>
+      </div>
+      <div id="caption2">
+        <p>Lista ogłoszeń z których wyliczono średnią cene: 21 543.</p>
+      </div>
+    </div> 
 </section>
 
 <script   src="https://code.jquery.com/jquery-2.2.4.min.js"   integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="   crossorigin="anonymous"></script>

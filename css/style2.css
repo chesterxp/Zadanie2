@@ -128,63 +128,73 @@ table {
   border-spacing: 0;
 }
 body {
-  font-size: 20px;
+  font-size: 14px;
   font-family: 'Lato', sans-serif;
 }
-nav header {
+nav {
+  background: #eaccae;
+}
+nav #main {
+  padding: 0 0 20px 0;
+}
+nav #main header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px;
+  padding: 20px 5px;
 }
-nav header .logo img {
-  height: 40px;
+nav #main header .logo img {
+  height: 20px;
 }
-nav header .menu #menuButton {
+nav #main header #menuButton {
   padding: 5px 20px;
   background: #e5cfb2;
   border-radius: 5px;
   border: none;
 }
-nav header .menu #menuButton:hover {
+nav #main header #menuButton:hover {
   background: #c4b199;
 }
-nav #menuList {
+nav #main #menu #menuList {
   list-style-type: none;
+  background: #eaccae;
+  margin-bottom: 10px;
 }
-nav #menuList a {
+nav #main #menu #menuList a {
   text-decoration: none;
-  padding: 15px 0;
+  padding: 15px 7px;
   display: block;
   text-align: center;
-  background: #eaccae;
   color: #646464;
   text-transform: uppercase;
-  font-size: 0.8em;
+  font-size: 0.7em;
 }
-nav #menuList a:hover {
-  background: #ac9681;
+nav #main #menu #menuList a:hover {
+  color: #baafa4;
 }
-nav #addAnons {
+nav #main .open {
+  display: block;
+}
+nav #main #addAnons {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 15px 0;
 }
-nav #addAnons .symbol {
+nav #main #addAnons .symbol {
   margin-right: 0.5em;
   font-size: 1.5em;
   color: #959595;
 }
-nav #addAnons button {
+nav #main #addAnons button {
   padding: 8px 20px;
   background: #23acd4;
   color: white;
   text-shadow: 0 -1px grey;
   border: 1px solid #23acd4;
   border-radius: 5px;
+  font-size: 0.8em;
 }
-nav #addAnons button:hover {
+nav #main #addAnons button:hover {
   background: white;
   color: #23acd4;
   border: 1px solid #23acd4;
@@ -235,23 +245,171 @@ nav #addAnons button:hover {
   border: 1px solid #ff8900;
   background: white;
 }
-#submitResults {
+#dataSection {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  flex-wrap: wrap;
+  margin: 30px auto;
 }
-#submitResults #dataSection .sortByPrice {
-  display: flex;
-  justify-content: center;
+#dataSection #sortByPrice,
+#dataSection #sortByTime,
+#dataSection #download {
   margin: 20px 0 10px 0;
+  font-size: 0.8em;
 }
-#submitResults #dataSection .sortByPrice a {
+#dataSection #sortByPrice a,
+#dataSection #sortByTime a,
+#dataSection #download a,
+#dataSection #sortByPrice p,
+#dataSection #sortByTime p,
+#dataSection #download p {
   color: #2c58cc;
   text-decoration: none;
-  padding: 10px 5px;
+  padding: 15px 10px;
 }
-#submitResults #dataSection .sortByPrice .active {
-  font-weight: bold;
+#dataSection #sortByPrice {
+  order: -1;
+  display: block;
+  width: 100%;
+}
+#dataSection #sortByPrice .sortBox a,
+#dataSection #sortByPrice .sortBox hr {
+  display: inline;
+}
+#dataSection #sortByTime {
+  width: 100%;
+}
+#dataSection #sortByTime .timeBox p,
+#dataSection #sortByTime .timeBox a,
+#dataSection #sortByTime .timeBox hr {
+  display: inline;
+}
+#dataSection #sortByTime .timeBox p {
   color: #4b4b4b;
+}
+#dataSection #download {
+  width: 100%;
+  text-align: center;
+}
+#dataSection #download img {
+  height: 10px;
+  width: auto;
+  margin-right: 0.5em;
+}
+#dataSection #download a:hover {
+  color: #7c7cc4;
+}
+#dataSection #chart {
+  order: -1;
+  margin: 20px 0;
+}
+#dataSection #chart img {
+  width: 100%;
+  height: auto;
+}
+#dataSection #caption {
+  padding: 20px 10px;
+  text-align: center;
+}
+#dataSection #caption p {
+  color: #555555;
+  font-size: 0.8em;
+  line-height: 20px;
+  margin-bottom: 20px;
+}
+#dataSection .active {
+  font-weight: bold;
+  color: #4b4b4b!important;
+  position: relative;
+}
+#dataSection .active::after {
+  content: '<';
+  transform: rotate(90deg);
+  position: absolute;
+  top: 36px;
+  left: 50%;
+  background: white;
+  padding: 0;
+  margin: 0;
+}
+#dataSection .line {
+  width: 100%;
+  margin: 15px 0;
+}
+@media all and (max-width: 699px) {
+  #menu {
+    display: none;
+  }
+  #dataSection #download {
+    display: none;
+  }
+}
+@media all and (min-width: 600px) {
+  #main {
+    width: 90%;
+    margin: 0 auto;
+  }
+  #averagePrices {
+    width: 90%;
+    margin: 0 auto;
+  }
+  #dataSection {
+    display: flex;
+    width: 90%;
+  }
+  #dataSection #sortByPrice {
+    order: -1;
+    width: 33%;
+  }
+  #dataSection #sortByTime,
+  #dataSection #download,
+  #dataSection #sortByPrice {
+    display: flex;
+    flex-direction: column;
+  }
+  #dataSection #sortByTime {
+    width: 50%;
+  }
+  #dataSection #download {
+    text-align: right;
+    width: 17%;
+  }
+  #dataSection #chart {
+    order: 0;
+  }
+  #dataSection #caption {
+    text-align: left;
+  }
+}
+@media all and (min-width: 700px) {
+  #main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0!important;
+  }
+  #main header {
+    padding: 10px 0;
+  }
+  #main header #menuButton {
+    display: none;
+  }
+  #main #menu {
+    display: block;
+  }
+  #main #menu #menuList {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 0!important;
+  }
+  #main #menu #menuList a {
+    padding: 15px 10px;
+  }
+}
+@media all and (min-width: 900px) {
+  body {
+    font-size: 18px;
+  }
+}
+@media all and (min-width: 1178px) {
+  font-size: 20px;
 }
