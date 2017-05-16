@@ -1,4 +1,11 @@
 $(document).ready(function(){
+    
+    $('.menuButton').click(function(){
+      
+      $('.list').slideToggle(500);
+    });
+  
+  
     var pokaz = document.getElementById('pokaz');
   
     pokaz.addEventListener('click',function(){

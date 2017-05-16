@@ -3,53 +3,44 @@
 <head>
   <meta charset="UTF-8">
   <title>Document</title>
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://fonts.googleapis.com/css?family=Lato:400,900i&amp;subset=latin-ext" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style2.css">
 </head>
 <body>
 
 <nav>
- <div class="menuButton ">Menu</div>
-  <ul class="list">
-    <li>
-      <a href="#">
-        <img src="images/domiporta_655.png" alt="">
-      </a>
-    </li>
-    <li><a href="#">Ogłoszenia</a></li>
-    <li><a href="#">Projekty</a></li>
-    <li><a href="#">Porady</a></li>
-    <li>
-      <a href="#">Moja Domiporta <span id="dropdown">▼</span></a>
-<!--
-      <ul class="dropmenu">
-        <li>Moje ogłoszenie</li>
-        <li>Wiadomości</li>
-        <li>Zaloguj</li>
-      </ul>
--->
-    </li>
-  </ul>
+  <header>
+    <div class="logo">
+      <img src="images/domiporta_655.png" alt="">
+    </div>
+    
+    <div class="menu">
+      <button id="menuButton">Menu</button>
+    </div>
+  </header>
   
-  <div id="secondPartNav">
-      <div class="symbol">
-    <p>★</p>
+  <div id="menuList">
+    <li><a href="#">ogłoszenia</a></li>
+    <li><a href="#">projekty</a></li>
+    <li><a href="#">porady</a></li>
+    <li><a href="#">moja domiporta <span id="dropDownButton">▼</span></a></li>
   </div>
   
-  <button id="mainButton">
-    Dodaj ogłoszenie
-  </button>
+  <div id="addAnons">
+    <div class="symbol">★</div>
+    <button id="addButton">Dodaj ogłoszenie</button>
   </div>
-
 </nav>
 
-<section id="averagePrice">
-  <header> Średnie ceny nieruchomości </header>
+<section id="averagePrices">
+  <header>
+    Średnie ceny nieruchomości
+  </header>
   <div id="search">
-   <div class="boxSearch">
-    <div class="field">
+    <div class="searchBox">
+      <div class="choiceOption">
       <label for="wojewodztwo">Województwo</label>
       <select id="wojewodztwo">
         <option value="Mazowieckie">Mazowieckie</option>
@@ -57,8 +48,8 @@
         <option value="Pomorskie">Pomorskie</option>
         <option value="Podlaskie">Podlaskie</option>
       </select>
-    </div>
-    <div class="field">
+      </div>
+      <div class="choiceOption">
       <label for="powiat">Powiat</label>
       <select id="powiat">
         <option value="Warszawski">Warszawski</option>
@@ -66,108 +57,102 @@
         <option value="Pruszkowski">Pruszkowski</option>
         <option value="Miński">Miński</option>
       </select>
-    </div>
-    <div class="field">
+      </div>
+      <div class="choiceOption">
       <label for="miejscowosc">Miejscowość</label>
       <select id="miejscowosc">
         <option value="Warszawa">Warszawa</option>
         <option value="Gdańsk">Gdańsk</option>
         <option value="Kraków">Kraków</option>
-        <option value="Toruń">Toruń</option>
+        <option value="Zakopane">Zakopane</option>
       </select>
-    </div>
-    <div class="field">
+      </div>
+      <div class="choiceOption">
       <label for="dzielnica">Dzielnica</label>
       <select id="dzielnica">
         <option value="Bemowo">Bemowo</option>
-        <option value="Mokotów">Mokotów</option>
         <option value="Wola">Wola</option>
+        <option value="Ursus">Ursus</option>
         <option value="Ursynów">Ursynów</option>
       </select>
-    </div>
-    <div class="field">
-      <label for="nieruchomość">Typ Nieruchomości</label>
-      <select id="nieruchomość">
-        <option value="mieszkanie">Mieszkanie</option>
-        <option value="dom">Dom</option>
-        <option value="apartament">Apartament</option>
-        <option value="kamper">Kamper</option>
+      </div>
+      <div class="choiceOption">
+      <label for="nieruchomosc">Typ Nieruchomości</label>
+      <select id="nieruchomosc">
+        <option value="Mieszkanie">Mieszkanie</option>
+        <option value="Dom">Dom</option>
+        <option value="Kamper">Kamper</option>
+        <option value="Garaż">Garaż</option>
       </select>
-    </div>
-    <div class="field">
+      </div>
+      <div class="choiceOption">
       <label for="transakcja">Typ transakcji</label>
       <select id="transakcja">
-        <option value="gotówka">Gotówka</option>
-        <option value="kartaplatniczna">Karta płatniczna</option>
-        <option value="przelew">Przelew</option>
+        <option value="Karta Płatnicza">Karta Płatnicza</option>
+        <option value="Przelew">Przelew</option>
+        <option value="Gotówka">Gotówka</option>
+        <option value="Wymiana">Wymiana</option>
       </select>
-    </div>
-    <div class="field">
+      </div>
+      <div class="choiceOption">
       <label for="rynek">Rynek</label>
       <select id="rynek">
-        <option value="pierwotnego">Pierwotny</option>
-        <option value="wtórnego">Wtórny</option>
+        <option value="Pierwotny">Pierwotny</option>
+        <option value="Wtórny">Wtórny</option>
       </select>
-    </div>
-    <div class="field">
+      </div>
+      <div class="choiceOption">
       <label for="powierzchnia">Powierzchnia</label>
       <select id="powierzchnia">
-        <option value="do 50">Do 50</option>
+        <option value="50">50</option>
         <option value="50-100">50-100</option>
         <option value="100-200">100-200</option>
-        <option value="powyżej 200">200+</option>
+        <option value="200+">200+</option>
       </select>
-    </div>
-    <div class="field">
-      <label for="pokoje">Liczba pokoi</label>
+      </div>
+      <div class="choiceOption">
+      <label for="pokoje">Liczba Pokoi</label>
       <select id="pokoje">
         <option value="1">1</option>
         <option value="2">2</option>
         <option value="3">3</option>
         <option value="4">4</option>
       </select>
+      </div>
     </div>
-  </div>
-  <div class="field2">
-    <button id="pokaz">Pokaż</button>
-  </div>
+    <div class="showResult">
+      <button id="showButton">Pokaż</button>
+    </div>
   </div>
 </section>
 
-<section id="chart">
-  <div class="topPart">
-    <div class="searchByPrice">
-      <ul>
-        <li><a href="#" class="active">Cena całkowita</a></li>
-        <li><a href="#">Cena za m2</a></li>
-      </ul>
+<section id="submitResults">
+  <div id="dataSection">
+    <div class="sortByPrice">
+      
+        <a href="#" class="active">Cena całkowita</a>
+        <hr>
+        <a href="#">Cena za m²</a>
     </div>
-
-    <div class="timeRange">
+    <hr>
+    <div class="sortByTime">
       <ul>
-        <li>Zakres:</li>
+        <li><a href="#">Zakres</a></li>
         <li><a href="#">6 m</a></li>
         <li><a href="#">12 m</a></li>
         <li><a href="#">24 m</a></li>
-        <li><a href="#" class="active">36 m</a></li>
+        <li><a href="#">36 m</a></li>
       </ul>
     </div>
-
-    <div class="excel">
-      <a href="#">
-        <img src="images/xls-icon-128x128.png" alt="">
-        <p>Eksportuj</p>
-      </a>
+    <div class="download">
+      <img src="images/xls-icon-128x128.png" alt="">
+      <p>Eksportuj</p>
     </div>
-    <div class="clear"></div>
   </div>
-  <div class="hr">
-    <hr>
-  </div>
-  <div class="chartPart">
+  <div id="chart">
     <img src="https://www.zoho.com/reports/images/chart-type03.png" alt="">
   </div>
-  <div class="caption">
+  <div id="caption">
     <div id="caption1">
       Wykres przedstawia średnie ceny mieszkań na sprzedaż z rynku <span id="rynek2">pierwotnego</span>, o powierzchni <span id="powierzchnia2">50</span>m². W lokalizacji: województwo: <span id="wojewodztwo2">Mazowieckie</span>, powiat: <span id="powiat2">Warszawski</span>, miasto <span id="miejscowosc2">Warszawa</span>, dzielnica: <span id="dzielnica2">Bemowo</span>.
     </div>
@@ -178,6 +163,6 @@
 </section>
 
 <script   src="https://code.jquery.com/jquery-2.2.4.min.js"   integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="   crossorigin="anonymous"></script>
-<script src="js/main.js"></script>
+<script src="js/main2.js"></script>  
 </body>
 </html>

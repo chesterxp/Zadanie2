@@ -6,6 +6,7 @@ body {
 }
 
 
+
 nav{
   background: white;
   margin: 0;
@@ -17,7 +18,12 @@ nav{
   position: relative;
   width: 90%;
   margin: 0 auto;
-
+  .menuButton{
+    display: none;
+    padding: 5px 10px;
+    background: #4e93d8;
+    color: white;
+  }
   
   .list{
     list-style-type: none;
@@ -36,7 +42,7 @@ nav{
     }
     a{
       text-decoration: none;
-      padding: 10px 20px;
+      padding: 10px;
       color: #afadad;
       text-transform: uppercase;
       font-size: 0.7em;
@@ -239,9 +245,54 @@ nav{
   }
 }
 
+.open{
+  opacity: 1;
+}
+
 @media all and (max-width:618px) {
   body {
     font-size: 15px;
+  }
+  nav{
+    position: relative;
+    margin: 20px auto 10px auto;
+    justify-content: center;
+    .menuButton{
+      display: block;
+      
+      &:hover{
+        background: red;
+      }
+    }
+    .list{
+      flex-direction: column;
+      display: none;
+      padding: 30px 0;
+      position: absolute;
+      top: 40px;
+      left: 0;
+      width: 100%;
+      background: #4475d0;
+      color: white;
+      z-index: 10;
+      margin: 0;
+      text-align: center;
+      li{
+        margin: 15px 0;
+        
+        a{
+          color: white;
+        }
+      
+      &:first-child{
+        display: none;
+      }
+      &::after{
+        content: "";
+        text-align: center;
+      }
+    }
+    }
   }
   header {
     text-align: center;
@@ -291,6 +342,19 @@ nav{
   body {
     font-size: 17px;
   }
+  header{
+    text-align: center;
+  }
+  nav{
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin: 30px 0;
+    #secondPartNav{
+
+      
+    }
+  }
   #averagePrice {
     .boxSearch {
       justify-content: center;
@@ -329,7 +393,7 @@ nav{
     }
   }
 }
-@media all and (min-width:881px) and (max-width:1219px) {
+@media all and (min-width:881px) and (max-width:1239px) {
   body {
     font-size: 18px;
   }
@@ -357,6 +421,7 @@ nav{
 @media all and (min-width:1520px) {
   #search {
     .boxSearch {
+      justify-content: space-around;
       .field{
         label,select{
           width: 350px;

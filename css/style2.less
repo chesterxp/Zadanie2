@@ -1,0 +1,205 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+///------------------------Reset CSS------------
+
+body{
+  font-size: 20px;
+  font-family: 'Lato', sans-serif;
+}
+nav{
+  header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    .logo{
+      img{
+        height: 40px;
+      }
+    }
+    .menu{
+      
+      #menuButton {
+	      padding: 5px 20px;
+        background: #e5cfb2;
+        border-radius: 5px;
+        border: none;
+        
+        &:hover{
+          background: #c4b199;
+        }
+      }
+    }
+  }
+  
+  #menuList{
+    list-style-type: none;
+    a{
+      text-decoration: none;
+      padding: 15px 0;
+      display: block;
+      text-align: center;
+      background: #eaccae;
+      color: #646464;
+      text-transform: uppercase;
+      font-size: 0.8em;
+      
+      &:hover{
+        background: #ac9681;
+      }
+    }
+  }
+  
+  #addAnons {
+	  display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 0;
+    .symbol{
+      margin-right: 0.5em;
+      font-size: 1.5em;
+      color: #959595;
+    }
+    button{
+      padding: 8px 20px;
+      background: #23acd4;
+      color: white;
+      text-shadow: 0 -1px grey;
+      border: 1px solid #23acd4;
+      border-radius: 5px;
+      
+      &:hover{
+        background: white;
+        color: #23acd4;
+        border: 1px solid #23acd4;
+      }
+    }
+  }
+}
+#averagePrices{
+//  display: flex;
+//  justify-content: center;
+//  align-items:center;
+//  flex-direction: column;
+header{
+    font-size: 1.1em;
+    padding: 20px 5px;
+    text-align: left;
+  }
+#search{
+  background:#f4dfb0;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  
+  .searchBox{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    .choiceOption{
+      display: flex;
+      flex-direction: column;
+      label,select{
+        padding: 10px 5px;
+        border-radius: 5px;
+        width: 250px;
+    }
+  }
+  }
+
+  .showResult {
+      text-align: center;
+      margin: 30px auto;
+	    button{
+        padding: 10px 5px;
+        border-radius: 5px;
+        background:#ff8900;
+        color: white;
+        width: 250px;
+        border: 1px solid #ff8900;
+        
+        &:hover{
+          color: #ff8900;
+          border: 1px solid #ff8900;
+          background: white;
+        }
+        
+  }
+}
+
+}
+}
+#submitResults{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  #dataSection{
+
+    .sortByPrice{
+      display: flex;
+      justify-content: center;
+      margin: 20px 0 10px 0;
+      a{
+        color: #2c58cc;
+        text-decoration: none;
+        padding: 10px 5px;
+      }
+      .active{
+        font-weight: bold;
+        color: #4b4b4b;
+      }
+    }
+  }
+}
+
