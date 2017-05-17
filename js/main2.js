@@ -1,6 +1,5 @@
-$(document).ready(function(){
-  $('#menuButton').click(function(){
-     $('#menu').toggleClass('open');
-      
-    });
+$(document).ready(function () {
+  $('#menuButton').click(function () {
+    $('#menu').toggleClass('open');
+  });
 });

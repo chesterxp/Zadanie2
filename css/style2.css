@@ -132,7 +132,7 @@ body {
   font-family: 'Lato', sans-serif;
 }
 nav {
-  background: #eaccae;
+  background: #fbfbfb;
 }
 nav #main {
   padding: 0 0 20px 0;
@@ -147,22 +147,47 @@ nav #main header .logo img {
   height: 20px;
 }
 nav #main header #menuButton {
-  padding: 5px 20px;
-  background: #e5cfb2;
-  border-radius: 5px;
-  border: none;
+  width: 30px;
+  height: 35px;
+  border: 0;
+  border-top: 5px solid #23acd4;
+  background: transparent;
+  position: relative;
+  transition: all 0.3s linear;
+  padding: 20px;
 }
-nav #main header #menuButton:hover {
-  background: #c4b199;
+nav #main header #menuButton::before,
+nav #main header #menuButton::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  border-top: 5px solid #23acd4;
+  transform: translateY(10px);
+}
+nav #main header #menuButton::after {
+  transform: translateY(25px);
+  transition: all 0.3s linear;
+}
+nav #main header #menuButton:focus {
+  transform: rotate(45deg) translateY(5px);
+  border: none;
+  outline: 0;
+}
+nav #main header #menuButton:focus::after {
+  transform: rotate(-90deg) translateX(-10px);
+}
+nav #main header #menuButton:focus ~ .mainList {
+  opacity: 0.9;
 }
 nav #main #menu #menuList {
   list-style-type: none;
-  background: #eaccae;
+  background: #fbfbfb;
   margin-bottom: 10px;
 }
 nav #main #menu #menuList a {
   text-decoration: none;
-  padding: 15px 7px;
   display: block;
   text-align: center;
   color: #646464;
@@ -170,7 +195,16 @@ nav #main #menu #menuList a {
   font-size: 0.7em;
 }
 nav #main #menu #menuList a:hover {
-  color: #baafa4;
+  color: #4db0f1;
+}
+nav #main #menu #menuList a:hover span {
+  border: 1px solid #baafa4;
+}
+nav #main #menu #menuList a span {
+  border: 1px solid #646464;
+  border-radius: 5px;
+  margin-left: 2px;
+  padding: 1px;
 }
 nav #main .open {
   display: block;
@@ -187,7 +221,7 @@ nav #main #addAnons .symbol {
 }
 nav #main #addAnons button {
   padding: 8px 20px;
-  background: #23acd4;
+  background: #4db0f1;
   color: white;
   text-shadow: 0 -1px grey;
   border: 1px solid #23acd4;
@@ -196,16 +230,17 @@ nav #main #addAnons button {
 }
 nav #main #addAnons button:hover {
   background: white;
-  color: #23acd4;
-  border: 1px solid #23acd4;
+  color: #4db0f1;
+  border: 1px solid #4db0f1;
 }
 #averagePrices header {
   font-size: 1.1em;
   padding: 20px 5px;
   text-align: left;
+  color: #7c7b69;
 }
 #averagePrices #search {
-  background: #f4dfb0;
+  background: #ebeae2;
   padding: 10px;
   display: flex;
   justify-content: center;
@@ -235,14 +270,14 @@ nav #main #addAnons button:hover {
 #averagePrices #search .showResult button {
   padding: 10px 5px;
   border-radius: 5px;
-  background: #ff8900;
+  background: #f17c0b;
   color: white;
   width: 250px;
-  border: 1px solid #ff8900;
+  border: 1px solid #f17c0b;
 }
 #averagePrices #search .showResult button:hover {
-  color: #ff8900;
-  border: 1px solid #ff8900;
+  color: #f17c0b;
+  border: 1px solid #f17c0b;
   background: white;
 }
 #dataSection {
@@ -335,8 +370,18 @@ nav #main #addAnons button:hover {
   width: 100%;
   margin: 15px 0;
 }
-@media all and (max-width: 699px) {
+@media all and (max-width: 729px) {
   #menu {
+    display: none;
+  }
+  #menu #menuList a {
+    padding: 10px 20px;
+  }
+  #menu #menuList a:hover {
+    background: #d3cfcf;
+    color: white;
+  }
+  #menu #menuList .menuLine {
     display: none;
   }
   #dataSection #download {
@@ -344,10 +389,6 @@ nav #main #addAnons button:hover {
   }
 }
 @media all and (min-width: 600px) {
-  #main {
-    width: 90%;
-    margin: 0 auto;
-  }
   #averagePrices {
     width: 90%;
     margin: 0 auto;
@@ -380,7 +421,37 @@ nav #main #addAnons button:hover {
     text-align: left;
   }
 }
-@media all and (min-width: 700px) {
+@media all and (min-width: 730px) {
+  #main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0!important;
+    width: 90%;
+    margin: 0 auto;
+  }
+  #main header {
+    padding: 10px 0;
+  }
+  #main header #menuButton {
+    display: none;
+  }
+  #main #menu {
+    display: block;
+  }
+  #main #menu #menuList {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 0!important;
+  }
+  #main #menu #menuList a {
+    padding: 0.75em 0.5em;
+  }
+}
+@media all and (min-width: 911px) {
+  body {
+    font-size: 17px;
+  }
   #main {
     display: flex;
     justify-content: space-between;
@@ -402,14 +473,35 @@ nav #main #addAnons button:hover {
     margin-bottom: 0!important;
   }
   #main #menu #menuList a {
-    padding: 15px 10px;
+    padding: 0.75em 1.65em;
   }
 }
-@media all and (min-width: 900px) {
+@media all and (min-width: 1178px) and (max-width: 1465px) {
   body {
     font-size: 18px;
   }
+  #averagePrices #search {
+    position: relative;
+  }
+  #averagePrices #search .searchBox {
+    justify-content: space-between;
+    padding: 0 0 10px 0;
+  }
+  #averagePrices #search .showResult {
+    position: absolute;
+    top: 175px;
+    right: 20px;
+  }
 }
-@media all and (min-width: 1178px) {
-  font-size: 20px;
+@media all and (min-width: 1465px) {
+  #averagePrices #search {
+    position: relative;
+  }
+  #averagePrices #search .searchBox {
+    flex-wrap: wrap;
+    padding: 0;
+  }
+  #averagePrices #search .showResult {
+    position: static;
+  }
 }
