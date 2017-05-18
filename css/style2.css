@@ -139,7 +139,7 @@ nav #main {
 }
 nav #main header {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   padding: 20px 5px;
 }
@@ -150,7 +150,7 @@ nav #main header #menuButton {
   width: 30px;
   height: 35px;
   border: 0;
-  border-top: 5px solid #23acd4;
+  border-top: 5px solid #f17c0b;
   background: transparent;
   position: relative;
   transition: all 0.3s linear;
@@ -163,7 +163,7 @@ nav #main header #menuButton::after {
   top: 0;
   left: 0;
   width: 100%;
-  border-top: 5px solid #23acd4;
+  border-top: 5px solid #f17c0b;
   transform: translateY(10px);
 }
 nav #main header #menuButton::after {
@@ -177,9 +177,6 @@ nav #main header #menuButton:focus {
 }
 nav #main header #menuButton:focus::after {
   transform: rotate(-90deg) translateX(-10px);
-}
-nav #main header #menuButton:focus ~ .mainList {
-  opacity: 0.9;
 }
 nav #main #menu #menuList {
   list-style-type: none;
@@ -195,14 +192,14 @@ nav #main #menu #menuList a {
   font-size: 0.7em;
 }
 nav #main #menu #menuList a:hover {
-  color: #4db0f1;
+  color: #f17c0b;
 }
 nav #main #menu #menuList a:hover span {
   border: 1px solid #baafa4;
 }
 nav #main #menu #menuList a span {
   border: 1px solid #646464;
-  border-radius: 5px;
+  border-radius: 3px;
   margin-left: 2px;
   padding: 1px;
 }
@@ -219,6 +216,9 @@ nav #main #addAnons .symbol {
   font-size: 1.5em;
   color: #959595;
 }
+nav #main #addAnons .symbol:hover {
+  color: gold;
+}
 nav #main #addAnons button {
   padding: 8px 20px;
   background: #4db0f1;
@@ -232,6 +232,10 @@ nav #main #addAnons button:hover {
   background: white;
   color: #4db0f1;
   border: 1px solid #4db0f1;
+}
+#averagePrices {
+  width: 95%;
+  margin: 0 auto;
 }
 #averagePrices header {
   font-size: 1.1em;
@@ -284,6 +288,7 @@ nav #main #addAnons button:hover {
   display: flex;
   flex-wrap: wrap;
   margin: 30px auto;
+  width: 95%;
 }
 #dataSection #sortByPrice,
 #dataSection #sortByTime,
@@ -375,7 +380,7 @@ nav #main #addAnons button:hover {
     display: none;
   }
   #menu #menuList a {
-    padding: 10px 20px;
+    padding: 0.8em 1.5em;
   }
   #menu #menuList a:hover {
     background: #d3cfcf;
@@ -441,7 +446,7 @@ nav #main #addAnons button:hover {
   }
   #main #menu #menuList {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     margin-bottom: 0!important;
   }
   #main #menu #menuList a {
@@ -469,7 +474,7 @@ nav #main #addAnons button:hover {
   }
   #main #menu #menuList {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     margin-bottom: 0!important;
   }
   #main #menu #menuList a {
